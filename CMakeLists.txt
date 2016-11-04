@@ -17,24 +17,21 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # - Use our standard set of flags
 set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -Wfatal-errors -Wshadow -pedantic")
 
+# - Enable testing and add the Testing subdirectory to the build
+enable_testing()
+add_subdirectory(Testing)
+
+# - Add the MPAGSCipher subdirectory to the build
+add_subdirectory(MPAGSCipher)
+
 # - Declare the build of mpags-cipher main program
-add_executable(mpags-cipher
-  mpags-cipher.cpp
-  MPAGSCipher/TransformChar.hpp
-  MPAGSCipher/TransformChar.cpp
-  MPAGSCipher/ProcessCommandLine.cpp
-  MPAGSCipher/ProcessCommandLine.hpp
-  MPAGSCipher/RunCaesarCipher.cpp
-  MPAGSCipher/RunCaesarCipher.hpp
-  MPAGSCipher/CaesarCipher.cpp
-  MPAGSCipher/CaesarCipher.hpp
-  
-  )
+add_executable(mpags-cipher mpags-cipher.cpp )
+target_link_libraries(mpags-cipher PRIVATE MPAGSCipher)
 
-target_include_directories(mpags-cipher
-  PRIVATE MPAGSCipher
-  )
+# - Install mpags-cipher using NIX/GNU directory structure
+include(GNUInstallDirs)
+install(TARGETS mpags-cipher DESTINATION ${CMAKE_INSTALL_BINDIR})
 
-target_compile_features(mpags-cipher
-  PRIVATE cxx_auto_type cxx_range_for cxx_uniform_initialization
-  )
+# - Package mpags-cipher binaries and sources
+set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
+include(CPack)
