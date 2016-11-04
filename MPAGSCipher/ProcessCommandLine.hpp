@@ -4,12 +4,15 @@
 #include <string>
 #include <vector>
 
-bool processCommandLine(const std::vector<std::string>& args,
-                        bool& helpRequested,
-                        bool& versionRequested,
-                        std::string& inputFile,
-                        std::string& outputFile,
-                        std::string& cipher_key,
-                        bool& encrypt);
+struct ProgramSettings {
+	bool helpRequested;	///< Identifies if help needs to be displayed
+	bool versionRequested;	///< Idintifies if version was requested
+	std::string inputFile;	///< Takes name of input file
+	std::string outputFile; ///< Takes name of output file
+	std::string cipher_key; ///< Takes the key for the cipher
+	bool encrypt;	///< Decides whether or not encrypt or decrypt
+};
+
+bool processCommandLine(const std::vector<std::string>& args, ProgramSettings& settings);
 
 #endif // MPAGSCIPHER_PROCESSCOMMANDLINE_HPP 
