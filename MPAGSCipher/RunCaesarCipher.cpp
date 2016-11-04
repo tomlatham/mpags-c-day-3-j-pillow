@@ -42,5 +42,5 @@ std::string runCaesarCipher( const std::string& inputText, const size_t key, con
   }
 
   return outputText;
-}
 
+}

@@ -3,6 +3,7 @@
 
 // Our project headers
 #include "ProcessCommandLine.hpp"
+#include "CipherMode.hpp"
 
 bool processCommandLine(const std::vector<std::string>& args, ProgramSettings& settings)
 {
@@ -73,10 +74,10 @@ bool processCommandLine(const std::vector<std::string>& args, ProgramSettings& s
 						}
 				}
 				else if ( args[i] == "--encrypt" ) {
-												settings.encrypt = true;
+												settings.encrypt = CipherMode::encrypt;
 				}
 				else if ( args[i] == "--decrypt" ) {
-												settings.encrypt = false;
+												settings.encrypt = CipherMode::decrypt;
 				}
 				else {
 						// Have encoutered an unknown flag, output an error message, set the flag
