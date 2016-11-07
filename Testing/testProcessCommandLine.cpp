@@ -7,18 +7,6 @@
 #include <iostream>
 #include <vector>
 
-/*
-int main(int argc, char* argv[])
-{
-		// Convert the command-line arguments into a more easily usable form
-		const std::vector<std::string> cmdLineArgs {argv, argv+argc};
-
-		// Options that might be set by the command-line arguments
-		ProgramSettings settings{false,false,"","","",CipherMode::encrypt};
-
-		// Process command line arguments
-		bool cmdLineStatus { processCommandLine(cmdLineArgs, settings) };
-*/
 
 TEST_CASE( "Command line is processed correctly", "[]" ) {
 	std::vector<std::string> cmdLineArgs {"./mpags-cipher"};
