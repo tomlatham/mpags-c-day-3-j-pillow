@@ -9,14 +9,12 @@
 
 TEST_CASE("Characters are uppercased", "[alphanumeric]") {
 
-	std::vector<char> alphabetUpper = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+	std::vector<std::string> alphabetUpper = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 	std::vector<char> alphabetLower = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 	const size_t nAlphabet = alphabetUpper.size();
-	std::string upperCase {""};
 	
 	for( size_t i{0} ; i < nAlphabet ; i++){
-		upperCase = alphabetUpper[i]; 
-		REQUIRE( transformChar(alphabetLower[i]) == upperCase ); // Test if transformChar is working properly
+		REQUIRE( transformChar(alphabetLower[i]) == alphabetUpper[i] ); // Test if transformChar is working properly
 	}
 }
 

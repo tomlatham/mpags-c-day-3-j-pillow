@@ -13,7 +13,7 @@ const size_t nAlphabet = alphabet_.size();
 
 TEST_CASE("Characters are encrypted successfully", "[alphanumeric]") {
 	for ( size_t i{0} ; i < 2*nAlphabet ; i++ ) {  // Do twice alphabet size to test wrapping
-		std::string testElem = "A";  // Test on fixed character as should be same for any arbitrary character
+		std::string testElem = "A";  // Test on fixed character as should be same for any arbitrary character and is simplest with A
 		CaesarCipher cipher {i};  // Set cipher_key equal to i
 		std::string cipheredTest {cipher.applyCipher(testElem,CipherMode::encrypt)};  // Apply the cipher to testElem
 		if ( i < nAlphabet ) { 
