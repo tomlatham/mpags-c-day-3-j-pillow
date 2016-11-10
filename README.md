@@ -91,6 +91,18 @@ classical ciphers, it is transliterated using the following rules:
 
 At present only the Caesar Cipher is supported.
 
+# Testing
+Currently there are three test files that test the functionality of:
+
+- Testing if the command line is processed correctly
+- Testing the character transform function
+- - Does it capitalise letters
+- - Does it turn numerics into their alpha counterparts
+- - Does it remove non-alphanumeric characters
+- Running the Caesar Cipher.
+- - Does it encrypt correctly
+- - Does it decrypt correctly
+
 # Source Code Layout
 Under this directory, the code and associated files are organised as
 follows:
@@ -102,12 +114,21 @@ MPAGS-Code
 ├── CMakeLists.txt        CMake build script
 ├── mpags-cipher.cpp      Main program C++ source file
 ├── MPAGSCipher           Subdirectory for MPAGSCipher library code
+|   └── CMakeLists.txt
+|   └── CaesarCipher.cpp
+|   └── CaesarCipher.hpp
 |   └── ProcessCommandLine.cpp
 |   └── ProcessCommandLine.hpp
 |   └── RunCaesarCipher.cpp
 |   └── RunCaesarCipher.hpp
 |   └── TransformChar.cpp
 |   └── TransformChar.hpp
+├── Testing               Subdirectory for Testing program
+|   └── catch.hpp
+|   └── CMakeLists.txt
+|   └── testCaesarCipher.cpp
+|   └── testProcessCommandLine.cpp
+|   └── testTransformChar.cpp
 ```
 
 # Copying
