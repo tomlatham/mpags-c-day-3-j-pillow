@@ -99,9 +99,24 @@ Currently there are three test files that test the functionality of:
   * Does it capitalise letters
   * Does it turn numerics into their alpha counterparts
   * Does it remove non-alphanumeric characters
-- Running the Caesar Cipher.
+- Running the Caesar Cipher
   * Does it encrypt correctly
   * Does it decrypt correctly
+
+To run the tests, run `ctest -VV` in the build directory:
+
+```
+$ ctest -VV
+-- Constructing a list of tests
+-- Done constructing a list of tests
+-- Checking test dependency graph...
+-- Checking test dependency graph end
+-- test 1
+-- Start 1: <test-name>
+... Run over tests, giving specific pass/fail for each ...
+-- N% tests passed, X tests failed out of Y
+-- Total Test time (real) = n sec
+```
 
 # Source Code Layout
 Under this directory, the code and associated files are organised as
