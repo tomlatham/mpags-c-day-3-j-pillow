@@ -95,6 +95,7 @@ At present only the Caesar Cipher is supported.
 Currently there are three test files that test the functionality of:
 
 - Testing if the command line is processed correctly
+  * 10 SCENARIOS that test each outcome of inputs given to the command line returns correctly
 - Testing the character transform function
   * Does it capitalise letters
   * Does it turn numerics into their alpha counterparts
@@ -116,6 +117,7 @@ $ ctest -VV
 ... Run over tests, giving specific pass/fail for each ...
 -- N% tests passed, X tests failed out of Y
 -- Total Test time (real) = n sec
+$
 ```
 
 # Source Code Layout
