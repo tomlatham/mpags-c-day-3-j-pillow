@@ -96,12 +96,12 @@ Currently there are three test files that test the functionality of:
 
 - Testing if the command line is processed correctly
 - Testing the character transform function
-- - Does it capitalise letters
-- - Does it turn numerics into their alpha counterparts
-- - Does it remove non-alphanumeric characters
+⋅⋅* Does it capitalise letters
+⋅⋅* Does it turn numerics into their alpha counterparts
+⋅⋅* Does it remove non-alphanumeric characters
 - Running the Caesar Cipher.
-- - Does it encrypt correctly
-- - Does it decrypt correctly
+⋅⋅* Does it encrypt correctly
+⋅⋅* Does it decrypt correctly
 
 # Source Code Layout
 Under this directory, the code and associated files are organised as
