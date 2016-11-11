@@ -15,7 +15,7 @@ TEST_CASE("Characters are encrypted successfully", "[alphanumeric]") {
 	for ( size_t i{0} ; i < 2*nAlphabet ; i++ ) {  // Do twice alphabet size to test wrapping
 		std::string testElem = "A";  // Test on fixed character as should be same for any arbitrary character and is simplest with A
 		CaesarCipher cipher {i};  // Set cipher_key equal to i
-		std::string cipheredTest {cipher.applyCipher(testElem,CipherMode::encrypt)};  // Apply the cipher to testElem
+		std::string cipheredTest {cipher.applyCipher(testElem,CipherMode::Encrypt)};  // Apply the cipher to testElem
 		if ( i < nAlphabet ) { 
 			testElem = alphabet_[i]; // For shifts less than length of vector, shift makes A become value at index i
 			REQUIRE ( cipheredTest == testElem );
@@ -31,7 +31,7 @@ TEST_CASE("Characters are decrypted successfully", "[alphanumeric]") {
 	for ( size_t i{0} ; i < 2*nAlphabet ; i++) {		
 		std::string testElem = "Z";
 		CaesarCipher cipher {i};
-		std::string cipheredTest {cipher.applyCipher(testElem,CipherMode::decrypt)};
+		std::string cipheredTest {cipher.applyCipher(testElem,CipherMode::Decrypt)};
 		if ( i < nAlphabet ) {
 			testElem = alphabet_[nAlphabet-1-i];
 			REQUIRE ( cipheredTest == testElem);

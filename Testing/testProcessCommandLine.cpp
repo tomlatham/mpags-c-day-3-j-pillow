@@ -10,7 +10,7 @@
 
 TEST_CASE( "Command line is processed correctly", "[]" ) {
 	std::vector<std::string> cmdLineArgs {"./mpags-cipher"};
-	ProgramSettings settings {false, false,"","","",CipherMode::encrypt};
+	ProgramSettings settings {false, false,"","","",CipherMode::Encrypt};
 	
 	SECTION( "Test help" ) {
 		cmdLineArgs.push_back("-h");
@@ -51,13 +51,13 @@ TEST_CASE( "Command line is processed correctly", "[]" ) {
 	SECTION( "Test encryption" ) {
 		cmdLineArgs.push_back("--encrypt");
 		processCommandLine( cmdLineArgs, settings);
-		REQUIRE ( settings.encrypt == CipherMode::encrypt );
+		REQUIRE ( settings.cipherMode == CipherMode::Encrypt );
 	}
 	
 	SECTION( "Test decryption" ) {
 		cmdLineArgs.push_back("--decrypt");
 		processCommandLine( cmdLineArgs, settings);
-		REQUIRE ( settings.encrypt == CipherMode::decrypt );
+		REQUIRE ( settings.cipherMode == CipherMode::Decrypt );
 	}
 	
 	SECTION( "Test key pass" ) {

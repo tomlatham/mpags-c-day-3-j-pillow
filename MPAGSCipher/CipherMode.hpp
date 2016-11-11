@@ -4,8 +4,8 @@
 
 /// enum class to set the mode of ciphering
 enum class CipherMode {
-	encrypt,	///< Encryption mode
-	decrypt		///< Decryption mode
+	Encrypt,	///< Encryption mode
+	Decrypt		///< Decryption mode
 };
 
 #endif // MPAGSCIPHER_CIPHERMODE_HPP
